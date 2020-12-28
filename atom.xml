@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zfzone.top/"/>
-  <updated>2020-12-11T23:18:35.171Z</updated>
+  <updated>2020-12-18T13:08:24.522Z</updated>
   <id>https://zfzone.top/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数方程的解法——Linear Solvers</title>
+    <link href="https://zfzone.top/archives/f77cbf0a.html"/>
+    <id>https://zfzone.top/archives/f77cbf0a.html</id>
+    <published>2020-12-16T18:28:55.000Z</published>
+    <updated>2020-12-18T13:08:24.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;线性代数方程组的解法————Linear-Solvers&quot;&gt;&lt;a href=&quot;#线性代数方程组的解法————Linear-Solvers&quot; class=&quot;headerlink&quot; title=&quot;线性代数方程组的解法————Linear
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>some basic points of java</title>
+    <link href="https://zfzone.top/archives/c1d6130f.html"/>
+    <id>https://zfzone.top/archives/c1d6130f.html</id>
+    <published>2020-12-14T21:57:30.000Z</published>
+    <updated>2020-12-27T23:04:13.608Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;javaSE入门笔记&quot;&gt;&lt;a href=&quot;#javaSE入门笔记&quot; class=&quot;headerlink&quot; title=&quot;javaSE入门笔记&quot;&gt;&lt;/a&gt;javaSE入门笔记&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>即将开始</title>
