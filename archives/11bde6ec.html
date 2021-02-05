@@ -9,10 +9,8 @@
     <meta name="keywords" content="java多线程, math programming life">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="java多线程进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。线程实现的三种方法：
+通过继承Thread类来实现：pa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -762,14 +760,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        52
+                        484
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -786,7 +784,89 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h1><h2 id="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"><a href="#进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。" class="headerlink" title="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"></a>进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。</h2><h2 id="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"><a href="#线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。" class="headerlink" title="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"></a>线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。</h2><h2 id="线程实现的三种方法："><a href="#线程实现的三种方法：" class="headerlink" title="线程实现的三种方法："></a>线程实现的三种方法：</h2><ul>
+<li>通过继承Thread类来实现：<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p>public class TestThread1 extends Thread{</p>
+<pre><code>@Override
+public void run() {
+    //这是一个线程体，需要在main线程中创建之后调用
+    for (int i = 0; i &lt; 200; i++) {
+        System.out.println("我不是主线程");
+    }
+}
+
+public static void main(String[] args) {
+
+    //这里创建线程对象
+    TestThread1 thread1 = new TestThread1();
+    //这里开始执行线程对象
+    thread1.start();
+
+    for (int i = 0; i &lt; 200; i++) {
+        System.out.println("我是主线程");
+    }
+
+
+}</code></pre><p>}</p>
+<pre><code>* 通过实现runnable接口来实现：
+```java
+package com;
+
+//多线程实现方式2，使用runnable接口，在主函数中使用thread类以参数的形式调用线程体
+public class TestThread2 implements Runnable{
+
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 20; i++) {
+            System.out.println("这不是主线程");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        TestThread2 Thread2= new TestThread2();
+        //Thread thread = new Thread(Thread2);
+        //thread.start();
+
+        //这里使用了匿名内部类
+        new Thread(Thread2).start();
+
+        for (int i = 0; i &lt; 20; i++) {
+            System.out.println("这是主线程");
+        }
+    }
+}
+</code></pre><ul>
+<li>通过实现runnable接口来实现：<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p>import java.util.concurrent.*;</p>
+<p>public class TestThread3 implements Callable<boolean> {<br>    @Override<br>    public Boolean call() throws Exception {<br>        for (int i = 0; i &lt; 20; i++) {<br>            System.out.println(“这不是主线程”);<br>        }<br>        return true;<br>    }</boolean></p>
+<pre><code>public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+    TestThread3 t1 = new TestThread3();
+
+    //创建执行服务,自线程池
+    ExecutorService ser = Executors.newFixedThreadPool(1);
+
+    //提交执行
+    Future&lt;Boolean&gt; r1 = ser.submit(t1);
+
+    //获取结果
+    boolean rs1 = r1.get();
+
+    ser.shutdown();
+
+    for (int i = 0; i &lt; 20; i++) {
+        System.out.println("这是主线程");
+    }
+}</code></pre><p>}</p>
+<p>```</p>
+<h2 id="callable线程实现方法的好处：有返回值并且可以捕获异常。"><a href="#callable线程实现方法的好处：有返回值并且可以捕获异常。" class="headerlink" title="callable线程实现方法的好处：有返回值并且可以捕获异常。"></a>callable线程实现方法的好处：有返回值并且可以捕获异常。</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1150,39 +1230,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/archives/11bde6ec.html">
+                <a href="/archives/78d36ff1.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="java多线程">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Nonlinear Solvers">
                         
-                        <span class="card-title">java多线程</span>
+                        <span class="card-title">Nonlinear Solvers</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            非线性方程的解法————Nonlinear Solvers首先要引入一个固定点的概念（fixed point）。设有关于x的函数f（x），则 f（x）= x 的解即为函数 f（x）的固定点（fixed point），为什么称之为固定点呢，因
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-30
+                        </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1389,7 +1464,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">1.1k</span> 字
+                <span class="white-color">2.1k</span> 字
             
 
             

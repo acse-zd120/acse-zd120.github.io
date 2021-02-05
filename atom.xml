@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zfzone.top/"/>
-  <updated>2020-12-28T15:43:19.877Z</updated>
+  <updated>2020-12-31T01:00:33.918Z</updated>
   <id>https://zfzone.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>java多线程</title>
-    <link href="https://zfzone.top/archives/11bde6ec.html"/>
-    <id>https://zfzone.top/archives/11bde6ec.html</id>
-    <published>2020-12-28T12:47:37.000Z</published>
-    <updated>2020-12-28T15:43:19.877Z</updated>
+    <title>numerical solution of IVPs</title>
+    <link href="https://zfzone.top/archives/373a3a67.html"/>
+    <id>https://zfzone.top/archives/373a3a67.html</id>
+    <published>2020-12-30T21:47:46.000Z</published>
+    <updated>2020-12-31T01:00:33.918Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,51 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h1 id=&quot;初值问题的数值解————numerical-solution-of-IVPs&quot;&gt;&lt;a href=&quot;#初值问题的数值解————numerical-solution-of-IVPs&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nonlinear Solvers</title>
+    <link href="https://zfzone.top/archives/78d36ff1.html"/>
+    <id>https://zfzone.top/archives/78d36ff1.html</id>
+    <published>2020-12-30T11:08:56.000Z</published>
+    <updated>2020-12-30T21:39:09.736Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;非线性方程的解法————Nonlinear-Solvers&quot;&gt;&lt;a href=&quot;#非线性方程的解法————Nonlinear-Solvers&quot; class=&quot;headerlink&quot; title=&quot;非线性方程的解法————Nonlinear
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java多线程</title>
+    <link href="https://zfzone.top/archives/11bde6ec.html"/>
+    <id>https://zfzone.top/archives/11bde6ec.html</id>
+    <published>2020-12-28T12:47:37.000Z</published>
+    <updated>2021-02-04T17:42:10.801Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;java多线程&quot;&gt;&lt;a href=&quot;#java多线程&quot; class=&quot;headerlink&quot; title=&quot;java多线程&quot;&gt;&lt;/a&gt;java多线程&lt;/h1&gt;&lt;h2
         
       
     
@@ -69,7 +109,7 @@
     <link href="https://zfzone.top/archives/c1d6130f.html"/>
     <id>https://zfzone.top/archives/c1d6130f.html</id>
     <published>2020-12-14T21:57:30.000Z</published>
-    <updated>2020-12-28T11:55:22.394Z</updated>
+    <updated>2020-12-28T15:48:08.196Z</updated>
     
     <summary type="html">
     

@@ -6,13 +6,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="即将开始, math programming life">
+    <meta name="keywords" content="Nonlinear Solvers, math programming life">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="即将开始
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { re">
+    <meta name="description" content="非线性方程的解法————Nonlinear Solvers首先要引入一个固定点的概念（fixed point）。设有关于x的函数f（x），则 f（x）= x 的解即为函数 f（x）的固定点（fixed point），为什么称之为固定点呢，因">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>即将开始 | 丁子凡的博客</title>
+    <title>Nonlinear Solvers | 丁子凡的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -619,13 +616,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        即将开始
+                        Nonlinear Solvers
                     </div>
                 </div>
             </div>
@@ -735,33 +732,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Hexo/" target="_blank">
-                                <span class="chip bg-color">Hexo</span>
-                            </a>
-                        
-                            <a href="/tags/Github/" target="_blank">
-                                <span class="chip bg-color">Github</span>
-                            </a>
-                        
-                            <a href="/tags/博客/" target="_blank">
-                                <span class="chip bg-color">博客</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/软件安装与配置/" class="post-category" target="_blank">
-                                软件安装与配置
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -769,7 +745,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-11
+                    2020-12-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -783,14 +759,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        56
+                        513
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -807,7 +783,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="即将开始"><a href="#即将开始" class="headerlink" title="即将开始"></a>即将开始</h1><script>
+                <h1 id="非线性方程的解法————Nonlinear-Solvers"><a href="#非线性方程的解法————Nonlinear-Solvers" class="headerlink" title="非线性方程的解法————Nonlinear Solvers"></a>非线性方程的解法————Nonlinear Solvers</h1><h2 id="首先要引入一个固定点的概念（fixed-point）。设有关于x的函数f（x），则-f（x）-x-的解即为函数-f（x）的固定点（fixed-point），为什么称之为固定点呢，因为当方程写为-x-f（x）-形式的时候，无论右侧嵌套多少层相同的内层函数，例如-x-f（f（f（x）））-，其得到的固定点的解值仍然相同。"><a href="#首先要引入一个固定点的概念（fixed-point）。设有关于x的函数f（x），则-f（x）-x-的解即为函数-f（x）的固定点（fixed-point），为什么称之为固定点呢，因为当方程写为-x-f（x）-形式的时候，无论右侧嵌套多少层相同的内层函数，例如-x-f（f（f（x）））-，其得到的固定点的解值仍然相同。" class="headerlink" title="首先要引入一个固定点的概念（fixed point）。设有关于x的函数f（x），则 f（x）= x 的解即为函数 f（x）的固定点（fixed point），为什么称之为固定点呢，因为当方程写为 x = f（x） 形式的时候，无论右侧嵌套多少层相同的内层函数，例如 x = f（f（f（x））） ，其得到的固定点的解值仍然相同。"></a>首先要引入一个固定点的概念（fixed point）。设有关于x的函数f（x），则 f（x）= x 的解即为函数 f（x）的固定点（fixed point），为什么称之为固定点呢，因为当方程写为 x = f（x） 形式的时候，无论右侧嵌套多少层相同的内层函数，例如 x = f（f（f（x））） ，其得到的固定点的解值仍然相同。</h2><h2 id="对于线性方程-x-f（x）来说，可以直接求解，但是当该方程为非线性时，或者为超越方程的时候，可以采用皮卡逐次逼近法来求解（Picard’s-method-of-successive-approximations）。其思想为循环迭代的思想，直至满足结束条件停止，条件一般为前后两个-x-的差值。注意这里前后两个x的差值即为-f（x）与-x-的差值。"><a href="#对于线性方程-x-f（x）来说，可以直接求解，但是当该方程为非线性时，或者为超越方程的时候，可以采用皮卡逐次逼近法来求解（Picard’s-method-of-successive-approximations）。其思想为循环迭代的思想，直至满足结束条件停止，条件一般为前后两个-x-的差值。注意这里前后两个x的差值即为-f（x）与-x-的差值。" class="headerlink" title="对于线性方程 x = f（x）来说，可以直接求解，但是当该方程为非线性时，或者为超越方程的时候，可以采用皮卡逐次逼近法来求解（Picard’s method of successive approximations）。其思想为循环迭代的思想，直至满足结束条件停止，条件一般为前后两个 x 的差值。注意这里前后两个x的差值即为 f（x）与 x 的差值。"></a>对于线性方程 x = f（x）来说，可以直接求解，但是当该方程为非线性时，或者为超越方程的时候，可以采用皮卡逐次逼近法来求解（Picard’s method of successive approximations）。其思想为循环迭代的思想，直至满足结束条件停止，条件一般为前后两个 x 的差值。注意这里前后两个x的差值即为 f（x）与 x 的差值。</h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="Nonlinear-Solvers/1.png" alt=""></p>
+<h2 id="为什么要引入皮卡逐次逼近法呢，因为我们同样可以将任何函数-f（x）的求根过程-f（x）-0-转化为-f（x）-x-来进行毕竟求解。"><a href="#为什么要引入皮卡逐次逼近法呢，因为我们同样可以将任何函数-f（x）的求根过程-f（x）-0-转化为-f（x）-x-来进行毕竟求解。" class="headerlink" title="为什么要引入皮卡逐次逼近法呢，因为我们同样可以将任何函数 f（x）的求根过程 f（x）= 0 转化为 f（x）= x 来进行毕竟求解。"></a>为什么要引入皮卡逐次逼近法呢，因为我们同样可以将任何函数 f（x<em>）的求根过程 f（x</em>）= 0 转化为 f（x）= x 来进行毕竟求解。</h2><h2 id="注意函数可以使用连续逐次逼近法的前提是：设-x-f（x），f（x）在交点附近的导数值小于-x-在交点附近的导数值。"><a href="#注意函数可以使用连续逐次逼近法的前提是：设-x-f（x），f（x）在交点附近的导数值小于-x-在交点附近的导数值。" class="headerlink" title="注意函数可以使用连续逐次逼近法的前提是：设 x = f（x），f（x）在交点附近的导数值小于 x 在交点附近的导数值。"></a>注意函数可以使用连续逐次逼近法的前提是：设 x = f（x），f（x）在交点附近的导数值小于 x 在交点附近的导数值。</h2><h2 id="逐次逼近法使用的时候，首先需要截取一段单调且存在明显存在解的区域。"><a href="#逐次逼近法使用的时候，首先需要截取一段单调且存在明显存在解的区域。" class="headerlink" title="逐次逼近法使用的时候，首先需要截取一段单调且存在明显存在解的区域。"></a>逐次逼近法使用的时候，首先需要截取一段单调且存在明显存在解的区域。</h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="Nonlinear-Solvers/2.png" alt=""></p>
+<h2 id="其次。为了保证连续逼近的过程是接近而不是发散，需要保证右侧的导数小于左侧，所以可以乘以相应倍数值进行调整，倍数值越接近-0-则接近得越快。"><a href="#其次。为了保证连续逼近的过程是接近而不是发散，需要保证右侧的导数小于左侧，所以可以乘以相应倍数值进行调整，倍数值越接近-0-则接近得越快。" class="headerlink" title="其次。为了保证连续逼近的过程是接近而不是发散，需要保证右侧的导数小于左侧，所以可以乘以相应倍数值进行调整，倍数值越接近 0 则接近得越快。"></a>其次。为了保证连续逼近的过程是接近而不是发散，需要保证右侧的导数小于左侧，所以可以乘以相应倍数值进行调整，倍数值越接近 0 则接近得越快。</h2><h2 id="除了皮卡逐次逼近法之外，还有二分法、牛顿逼近（与泰勒展开式相近），均是利用逐渐逼近的方式来逼近精确解。"><a href="#除了皮卡逐次逼近法之外，还有二分法、牛顿逼近（与泰勒展开式相近），均是利用逐渐逼近的方式来逼近精确解。" class="headerlink" title="除了皮卡逐次逼近法之外，还有二分法、牛顿逼近（与泰勒展开式相近），均是利用逐渐逼近的方式来逼近精确解。"></a>除了皮卡逐次逼近法之外，还有二分法、牛顿逼近（与泰勒展开式相近），均是利用逐渐逼近的方式来逼近精确解。</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -851,7 +829,7 @@
                     </span>
                     <a href="https://zfzone.top" class="b-link-green">丁子凡的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/archives/e3e08109.html" class="b-link-green">即将开始</a>
+                    <a href="/archives/78d36ff1.html" class="b-link-green">Nonlinear Solvers</a>
                 </p>
             </div>
 
@@ -1175,27 +1153,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/archives/c1d6130f.html">
+                <a href="/archives/373a3a67.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="some basic points of java">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="numerical solution of IVPs">
                         
-                        <span class="card-title">some basic points of java</span>
+                        <span class="card-title">numerical solution of IVPs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            javaSE入门笔记
-java的几个特性：简单性、面向对象性、可移植性，高性能、分布式、动态性（反射）、多线程、安全性、健壮性。
-java是一种强类型语言，无法对变量进行类型转换（除非强制转换）
-基本数据类型：int, short, lon
+                            初值问题的数值解————numerical solution of IVPs
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+   
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-30
                         </span>
                         <span class="publish-author">
                             
@@ -1209,56 +1187,33 @@ java是一种强类型语言，无法对变量进行类型转换（除非强制�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/e3e08109.html">
+                <a href="/archives/11bde6ec.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="即将开始">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="java多线程">
                         
-                        <span class="card-title">即将开始</span>
+                        <span class="card-title">java多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            来了来了来了
+                            java多线程进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。线程实现的三种方法：
+通过继承Thread类来实现：pa
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/软件安装与配置/" class="post-category" target="_blank">
-                                    软件安装与配置
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Github/" target="_blank">
-                        <span class="chip bg-color">Github</span>
-                    </a>
-                    
-                    <a href="/tags/博客/" target="_blank">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
                 </div>
                 
             </div>
