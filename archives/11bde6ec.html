@@ -784,21 +784,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h1><h2 id="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"><a href="#进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。" class="headerlink" title="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"></a>进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。</h2><h2 id="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"><a href="#线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。" class="headerlink" title="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"></a>线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。</h2><h2 id="线程实现的三种方法："><a href="#线程实现的三种方法：" class="headerlink" title="线程实现的三种方法："></a>线程实现的三种方法：</h2><ul>
+                <h2 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h2><h3 id="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"><a href="#进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。" class="headerlink" title="进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。"></a>进程（process）是程序执行一次的过程，而线程（thread）是计算机自动为程序的分配的路径。</h3><h3 id="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"><a href="#线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。" class="headerlink" title="线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。"></a>线程开始调用之后不一定立即执行，而是由cpu来进行时间切片，来安排调度。</h3><h3 id="线程实现的三种方法："><a href="#线程实现的三种方法：" class="headerlink" title="线程实现的三种方法："></a>线程实现的三种方法：</h3><ul>
 <li>通过继承Thread类来实现：<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
-<p>public class TestThread1 extends Thread{</p>
-<pre><code>@Override
-public void run() {
-    //这是一个线程体，需要在main线程中创建之后调用
-    for (int i = 0; i &lt; 200; i++) {
-        System.out.println("我不是主线程");
-    }
-}
-
-public static void main(String[] args) {
+<p>public class TestThread1 extends Thread{<br>    @Override<br>    public void run() {<br>        //这是一个线程体，需要在main线程中创建之后调用<br>        for (int i = 0; i &lt; 200; i++) {<br>            System.out.println(“我不是主线程”);<br>        }<br>    }</p>
+<pre><code>public static void main(String[] args) {
 
     //这里创建线程对象
     TestThread1 thread1 = new TestThread1();
@@ -808,7 +800,6 @@ public static void main(String[] args) {
     for (int i = 0; i &lt; 200; i++) {
         System.out.println("我是主线程");
     }
-
 
 }</code></pre><p>}</p>
 <pre><code>* 通过实现runnable接口来实现：
@@ -866,7 +857,7 @@ public class TestThread2 implements Runnable{
     }
 }</code></pre><p>}</p>
 <p>```</p>
-<h2 id="callable线程实现方法的好处：有返回值并且可以捕获异常。"><a href="#callable线程实现方法的好处：有返回值并且可以捕获异常。" class="headerlink" title="callable线程实现方法的好处：有返回值并且可以捕获异常。"></a>callable线程实现方法的好处：有返回值并且可以捕获异常。</h2><script>
+<h3 id="callable线程实现方法的好处：有返回值并且可以捕获异常。"><a href="#callable线程实现方法的好处：有返回值并且可以捕获异常。" class="headerlink" title="callable线程实现方法的好处：有返回值并且可以捕获异常。"></a>callable线程实现方法的好处：有返回值并且可以捕获异常。</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1678,5 +1669,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
